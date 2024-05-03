@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <!--YE hmara IOC container hai.... jisme hum bean create krte hai-->
+
+	<!--this is our bean -->
+	
+	<bean class="com.springcore.autowire.Address" name="address">
+	<property name="city" value="Vanarasi"/>
+	<property name="dist" value="Mirzapur"/>
+	</bean>
+	
+	<bean class="com.springcore.autowire.Address" name="address1">
+	<property name="city" value="Renukoot"/>
+	<property name="dist" value="Sonbhadra"/>
+	</bean>
+	
+	
+	<!--autowiring byName    aur jab hm byName lgata hai... tb wo direct reference variable object ko wo config file me search krta hai...agar usse address naame se  bean mil gya toh autowiring hojayega wrna null output dedega-->
+	<bean class="com.springcore.autowire.Employee" name="emp" autowire="constructor"/>
+	
+
+	
+
+
+</beans>

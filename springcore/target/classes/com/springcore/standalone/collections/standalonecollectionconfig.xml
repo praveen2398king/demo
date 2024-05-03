@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd 
+http://www.springframework.org/schema/context 
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/util 
+http://www.springframework.org/schema/util/spring-util.xsd
+">
+
+
+	<!--YE hmara IOC container hai.... jisme hum bean create krte hai-->
+
+
+	<!--Standalone List-->
+	<!--Aap util list ke mdad se aap jo list ya vector lena chaho wo le skte ho...sirf list-class ke andr change krke like linkedlist or arraylist-->
+	<util:list list-class="java.util.Vector" id="mybestfriend">
+		<value>Ram</value>
+		<value> Aman</value>
+		<value> Ankit</value>
+		<value> Elena</value>
+	</util:list>
+
+	<!--standalone Map-->
+
+	<util:map map-class="java.util.HashMap" id="subjectfees">
+		<entry key="java" value="3000" />
+		<entry key="python" value="4500" />
+		<entry key="javascript" value="1000" />
+		<entry key="data science" value="10000" />
+	</util:map>
+
+	<!-- Standalone Properties -->
+
+	<util:properties id="dbconfig">
+		<prop key="driver"> com.mysql.jdbc.driver </prop>
+		<prop key="username"> Praveen</prop>
+		<prop key="password"> abcd </prop>
+		<prop key="url"> c/standalonecollectionconfig.xml</prop>
+	</util:properties>
+
+	<bean class="com.springcore.standalone.collections.Person" name="p1">
+		<property name="friends" ref="mybestfriend" />
+		<property name="fees" ref="subjectfees" />
+		<property name="props" ref="dbconfig" />
+
+
+		<!--	<property name="friends">
+			<ref bean="mybestfriend"/>
+		</property>
+-->
+
+
+	</bean>
+
+
+</beans>
